@@ -1,2 +1,4 @@
-class Admin::AdministratorsController < Admin:Base
+class Admin::AdministratorsController < Admin::Base
+  def index
+  end
 end
