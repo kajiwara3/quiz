@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20121111134157) do
 
   create_table "administrators", :force => true do |t|
-    t.string   "CreateAdministrators"
+    t.string   "name"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "email",                  :default => "", :null => false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20121111134157) do
   add_index "administrators", ["reset_password_token"], :name => "index_administrators_on_reset_password_token", :unique => true
 
   create_table "users", :force => true do |t|
-    t.string   "CreateUsers"
+    t.string   "name"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "email",                  :default => "", :null => false
