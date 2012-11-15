@@ -7,6 +7,7 @@ gnames = ["太郎", "次郎", "花子"]
     name: "#{fnames[idx % 4]} #{gnames[idx % 3]}",
     email: "test#{idx}@a.com",
     password: "password",
-    password_confirmation: "password"
+    password_confirmation: "password",
+    gender_id: idx % 2 + 1
   )
 end
