@@ -5,8 +5,13 @@
 
   <div class="form-inputs">
     <%= f.input :email, :required => true, :autofocus => true %>
+    <%= f.association :gender, collection: Gender.all,
+                               label_method: :caption,
+                               value_method: :gender_code,
+                               include_blank: "選択してください" %>
     <%= f.input :password, :required => true %>
     <%= f.input :password_confirmation, :required => true %>
+    <%= f.input :privacy_agree, required: true, as: :radio_buttons %>
   </div>
 
   <div class="form-actions">
