@@ -44,12 +44,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Quiz</a>
+          <%= link_to("Quiz", admin_root_path, class: "brand") %>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to "Quiz", "/path1"  %></li>
+              <li><%= link_to "Users", "/path2"  %></li>
+              <li><%= link_to "Administrators", :admin_administrators  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
