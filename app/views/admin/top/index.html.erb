@@ -1,1 +1,2 @@
-top des
+<%= link_to('logout', destroy_admin_administrator_session_path, mathod: :delete) if admin_administrator_signed_in? %>
+<%= link_to('sign in', new_admin_administrator_session_path) if !admin_administrator_signed_in? %>
