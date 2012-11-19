@@ -1,5 +1,4 @@
-class Admin::TopController < ApplicationController
-  layout "admin_application"
+class Admin::TopController < Admin::Base
   def index
   end
 end
