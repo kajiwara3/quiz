@@ -21,4 +21,13 @@ class Admin::UsersController < Admin::Base
     end
     return render "edit"
   end
+
+  def destroy
+    @user = User.find(params[:id])
+    if @user.destroy
+      return redirect_to :admin_users, notice: "削除しました"
+    end
+    flash[:notice] = '削除に失敗しました'
+    return render "show"
+  end
 end
