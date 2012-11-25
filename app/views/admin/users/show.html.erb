@@ -1,0 +1,17 @@
+<%= link_to '一覧に戻る', :admin_users %> | <%= link_to "編集する", [:edit, :admin, @user] %>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>name</th>
+      <td><%= @user.name %></td>
+    </tr>
+    <tr>
+      <th>gender</th>
+      <td><%= @user.gender.caption %></td>
+    </tr>
+    <tr>
+      <th>email</th>
+      <td><%= @user.email %></td>
+    </tr>
+  </tbody>
+</table>
