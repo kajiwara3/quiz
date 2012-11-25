@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121115124223) do
+ActiveRecord::Schema.define(:version => 20121125113919) do
 
   create_table "administrators", :force => true do |t|
     t.string   "name"
@@ -36,11 +36,38 @@ ActiveRecord::Schema.define(:version => 20121115124223) do
   add_index "administrators", ["email"], :name => "index_administrators_on_email", :unique => true
   add_index "administrators", ["reset_password_token"], :name => "index_administrators_on_reset_password_token", :unique => true
 
+  create_table "examinations", :force => true do |t|
+    t.string   "name"
+    t.integer  "entry_capasity"
+    t.integer  "passing_grade"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "genders", :force => true do |t|
     t.integer  "gender_code"
     t.string   "caption"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "question_choices", :force => true do |t|
+    t.integer  "question_id"
+    t.string   "caption",                         :null => false
+    t.boolean  "correct_flag", :default => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  create_table "questions", :force => true do |t|
+    t.integer  "examination_id", :null => false
+    t.string   "caption",        :null => false
+    t.text     "description",    :null => false
+    t.integer  "credits"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|

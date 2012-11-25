@@ -13,5 +13,8 @@ Quiz::Application.routes.draw do
     root to: "top#index"
     resources :administrators
     resources :users
+    resources :examinations
+    resources :questions
+    resources :question_choices
   end
 end
