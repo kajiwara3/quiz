@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :gender_id, :password, :password_confirmation, :remember_me, :privacy_agree
   belongs_to :gender
 
-  validates :name, :email, :gender_id, :privacy_agree, presence: true
+  validates :name, :email, :gender_id, presence: true
+  validates :privacy_agree, presence: {on: :create}
   validate :privacy_agree_validate?
 
   def privacy_agree_validate?
