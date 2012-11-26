@@ -1,5 +1,6 @@
 # coding: utf-8
 class Admin::UsersController < Admin::Base
+  before_filter :authenticate_admin_administrator!
   def index
     @users = User.order(:id).page(params[:page]).per(5)
   end
