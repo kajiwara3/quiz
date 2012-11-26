@@ -1,0 +1,19 @@
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>テスト名</th>
+      <th>開始日</th>
+      <th>終了日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @examinations.each do |exam| %>
+      <tr>
+        <td><%= link_to exam.name, [:admin, exam] %></td>
+        <td><%= l exam.start_at, format: :default %></td>
+        <td><%= l exam.end_at, format: :default %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @examinations %>

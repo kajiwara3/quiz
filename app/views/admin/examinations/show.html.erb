@@ -1,0 +1,29 @@
+<i class="icon-home"></i><%= link_to 'テスト一覧に戻る', :admin_examinations %> |
+<i class="icon-pencil"></i><%= link_to '編集する', "#"%>
+<table class="table">
+  <tbody>
+    <tr>
+      <th><%= Examination.human_attribute_name :name %></th>
+      <td><%= @examination.name %></td>
+    </tr>
+    <tr>
+      <th><%= Examination.human_attribute_name :entry_capasity %></th>
+      <td><%= @examination.entry_capasity %></td>
+    </tr>
+    <tr>
+      <th><%= Examination.human_attribute_name :passing_grade %></th>
+      <td><%= @examination.passing_grade %></td>
+    </tr>
+    <tr>
+      <th><%= Examination.human_attribute_name :start_at %></th>
+      <td><%= l @examination.start_at, format: :default %></td>
+    </tr>
+    <tr>
+      <th><%= Examination.human_attribute_name :end_at %></th>
+      <td><%= l @examination.end_at, format: :default %></td>
+    </tr>
+  </tbody>
+</table>
+<%= link_to "#" , class: "btn btn-primary" do %>
+  <i class="icon-pencil icon-white"></i> 設問管理へ
+<% end %>
