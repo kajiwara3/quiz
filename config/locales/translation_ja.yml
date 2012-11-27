@@ -32,3 +32,10 @@ ja:
         reset_password_sent_at: reset_password_sent_at  #g
         reset_password_token: reset_password_token  #g
         unconfirmed_email: unconfirmed_email  #g
+  views:
+    pagination:
+      first: "«"
+      last: "»"
+      previous: "‹ 前"
+      next: "次 ›"
+      truncate: "..."
