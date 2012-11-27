@@ -1,0 +1,20 @@
+<%= link_to 'Back', [:admin, @examination] %>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th><%= Question.human_attribute_name 'caption' %></th>
+      <th><%= Question.human_attribute_name 'description' %></th>
+      <th><%= Question.human_attribute_name "credits"%></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= link_to question.caption, [:admin, @examination, question] %></td>
+        <td><%= truncate(question.description, length: 20) %></td>
+        <td><%= question.credits %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @questions %>

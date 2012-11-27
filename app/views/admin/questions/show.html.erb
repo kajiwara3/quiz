@@ -1,0 +1,38 @@
+<%= link_to 'Back', [:admin, @examination, :questions] %>
+<h2>Question</h2>
+<i class="icon-edit"></i> <%= link_to 'Edit', [:edit, :admin, @examination, @question] %> |
+<i class="icon-trash"></i>Delete
+<table class="table">
+  <tbody>
+    <tr>
+      <th><%= Question.human_attribute_name 'caption' %></th>
+      <td><%= @question.caption %></td>
+    </tr>
+    <tr>
+      <th><%= Question.human_attribute_name 'description' %></th>
+      <td><%= simple_format(@question.description) %></td>
+    </tr>
+    <tr>
+      <th><%= Question.human_attribute_name 'credits' %></th>
+      <td><%= @question.credits %></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Question Choice</h2>
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th><%= QuestionChoice.human_attribute_name 'caption' %></th>
+      <th><%= QuestionChoice.human_attribute_name 'correct_flag' %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @question.question_choices.each do |choice| %>
+      <tr>
+        <td><%= choice.caption %></td>
+        <td><%= choice.correct_flag %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
