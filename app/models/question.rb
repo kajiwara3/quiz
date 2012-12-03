@@ -1,4 +1,4 @@
 class Question < ActiveRecord::Base
-  belongs_to :examination
-  has_many :question_choices
+  belongs_to :examination, dependent: :destroy
+  has_many :question_choices, dependent: :destroy
 end
