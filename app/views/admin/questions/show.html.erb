@@ -25,13 +25,15 @@
     <tr>
       <th><%= QuestionChoice.human_attribute_name 'caption' %></th>
       <th><%= QuestionChoice.human_attribute_name 'correct_flag' %></th>
+      <th>-</th>
     </tr>
   </thead>
   <tbody>
     <% @question.question_choices.each do |choice| %>
       <tr>
-        <td><%= choice.caption %></td>
-        <td><%= choice.correct_flag %></td>
+        <td><%= link_to choice.caption, [:admin, @question, choice] %></td>
+        <td><%= correct_icon choice.correct_flag %></td>
+        <td><i class="icon-pencil"></i></td>
       </tr>
     <% end %>
   </tbody>
