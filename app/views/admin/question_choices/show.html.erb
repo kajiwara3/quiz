@@ -1,0 +1,17 @@
+<%= link_to 'Back', [:admin, @question_choice.question.examination, @question_choice.question] %>
+<h2>Question Choice</h2>
+<i class="icon-edit"></i> <%= link_to 'Edit',
+  [:edit, :admin, @question_choice.question, @question_choice] %> |
+<i class="icon-trash"></i>Delete
+<table class="table">
+  <tbody>
+    <tr>
+      <th><%= QuestionChoice.human_attribute_name 'caption' %></th>
+      <td><%= @question_choice.caption %></td>
+    </tr>
+    <tr>
+      <th><%= QuestionChoice.human_attribute_name 'correct_flag' %></th>
+      <td><%= correct_icon @question_choice.correct_flag %></td>
+    </tr>
+  </tbody>
+</table>
