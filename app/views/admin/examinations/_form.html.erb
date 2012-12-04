@@ -1,0 +1,9 @@
+<%= f.input :name %>
+<%= f.input :entry_capasity %>
+<%= f.input :passing_grade %>
+<%= f.input :start_at, use_month_numbers: true, date_separator: '/',
+                       start_year: Date.today.year, end_year: Date.today.year - 2,
+                       input_html: {class: 'input-small'} %>
+<%= f.input :end_at, use_month_numbers: true, date_separator: '/',
+                       start_year: Date.today.year, end_year: Date.today.year - 2,
+                       input_html: {class: 'input-small'} %>
