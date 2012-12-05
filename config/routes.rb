@@ -14,9 +14,7 @@ Quiz::Application.routes.draw do
     resources :administrators
     resources :users
     resources :examinations do
-      resources :questions do
-        :question_choices
-      end
+      resources :questions
     end
     resources :questions do
       resources :question_choices

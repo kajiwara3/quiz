@@ -1,0 +1,7 @@
+<i class="icon-backward"></i> <%= link_to 'Back', [:admin, @examination, :questions] %>
+<%= simple_form_for [:admin, @examination, @question], html: {class: 'form-holizonal'} do |f| %>
+  <%= render 'form', f: f %>
+  <%= button_tag type: :submit, class: 'btn btn-primary' do %>
+    <i class="icon-ok icon-white"></i> 決定する
+  <% end %>
+<% end %>
