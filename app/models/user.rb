@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   attr_accessor :privacy_agree
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :gender_id, :password, :password_confirmation, :remember_me, :privacy_agree
+  attr_accessible :name, :email, :gender_id, :password,
+    :password_confirmation, :remember_me, :privacy_agree, :confirmed_at
   belongs_to :gender
 
   validates :name, :email, :gender_id, presence: true
