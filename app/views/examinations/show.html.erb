@@ -1,0 +1,29 @@
+<table class="table table-hover table-striped">
+  <tr>
+    <th><%= Examination.human_attribute_name "name" %></th>
+    <td><%= @examination.name %></td>
+  </tr>
+  <tr>
+    <th><%= Examination.human_attribute_name "entry_capasity" %></th>
+    <td><%= @examination.entry_capasity %></td>
+  </tr>
+  <tr>
+    <th>Question Count</th>
+    <td><%= @examination.questions.count %></td>
+  </tr>
+  <tr>
+    <th><%= Examination.human_attribute_name "passing_grade" %></th>
+    <td><%= @examination.passing_grade %></td>
+  </tr>
+  <tr>
+    <th><%= Examination.human_attribute_name "start_at" %></th>
+    <td><%= l @examination.start_at, format: :default %></td>
+  </tr>
+  <tr>
+    <th><%= Examination.human_attribute_name "end_at" %></th>
+    <td><%= l @examination.end_at, format: :default %></td>
+  </tr>
+</table>
+<%= link_to [@examination, :questions], class: "btn btn-primary btn-large" do %>
+  <i class="icon-pencil icon-white"></i> 受講する
+<% end %>

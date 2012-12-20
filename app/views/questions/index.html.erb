@@ -1,0 +1,30 @@
+<ul>
+  <% @questions.each do |question| %>
+    <li>
+      <%= question.caption %>
+      <p>
+        <%= question.description %>
+      </p>
+    </li>
+
+    <%= form_tag [:admin, :examinations], method: :get do %>
+      <ol>
+        <% question.question_choices.each do |choice| %>
+          <li>
+            <p>
+              <%= label question.id, choice.id, class: 'radio' do %>
+                <%= radio_button_tag question.id, choice.id %>
+                <%= choice.caption %>
+              <% end %>
+            </p>
+          </li>
+        <% end %>
+      </ol>
+    <% end %>
+    <%= button_tag type: :submit do%>
+      <i class="icon-ok"></i> 決定
+    <% end %>
+  <% end %>
+</ul>
+<%= paginate @questions %>
+

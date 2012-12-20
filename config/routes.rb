@@ -4,8 +4,11 @@ Quiz::Application.routes.draw do
   #devise_for :administrators
 
   root to: "top#index"
-  resource :users
   match "wellcome", to: "users#wellcome"
+  resource :users
+  resources :examinations do
+    resources :questions
+  end
 
   namespace :admin do
     #devise_for :administrators, controllers: { sessions: 'admin/sessions' }
