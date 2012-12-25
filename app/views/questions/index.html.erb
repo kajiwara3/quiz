@@ -1,30 +1,20 @@
-<ul>
-  <% @questions.each do |question| %>
-    <li>
-      <%= question.caption %>
-      <p>
-        <%= question.description %>
-      </p>
-    </li>
-
-    <%= form_tag [:admin, :examinations], method: :get do %>
-      <ol>
-        <% question.question_choices.each do |choice| %>
-          <li>
-            <p>
-              <%= label question.id, choice.id, class: 'radio' do %>
-                <%= radio_button_tag question.id, choice.id %>
-                <%= choice.caption %>
-              <% end %>
-            </p>
-          </li>
-        <% end %>
-      </ol>
+<h3>
+  <i class="icon-pencil"></i> Questions
+</h3>
+<table class="table table-hover table-striped">
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <th><%= question.caption %></th>
+        <td><%= question.description %></td>
+        <td>
+          <%= link_to [@examination, question], class: 'btn btn-primary' do %>
+            <i class="icon-pencil"></i> 解答
+          <% end %>
+        </td>
+      </tr>
     <% end %>
-    <%= button_tag type: :submit do%>
-      <i class="icon-ok"></i> 決定
-    <% end %>
-  <% end %>
-</ul>
+  </tbody>
+</table>
 <%= paginate @questions %>
 
