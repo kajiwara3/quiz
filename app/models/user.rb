@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :gender_id, :password,
     :password_confirmation, :remember_me, :privacy_agree, :confirmed_at
   belongs_to :gender
+  has_many :answer_sheets
 
   validates :name, :email, :gender_id, presence: true
   validates :privacy_agree, presence: {on: :create}

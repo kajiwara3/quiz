@@ -7,6 +7,12 @@ Quiz::Application.routes.draw do
   match "wellcome", to: "users#wellcome"
   resource :users
   resource :account_services
+  resources :answer_sheets do
+    collection do
+      get 'mylogs'
+    end
+  end
+
   resources :examinations do
     member do
       post 'start_examination'

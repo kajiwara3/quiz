@@ -1,0 +1,21 @@
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Examination Name</th>
+      <th>Start At</th>
+      <th>Total Score</th>
+      <th>Success</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @answer_sheets.each do |sheet| %>
+      <tr>
+        <td><%= sheet.examination.name %></td>
+        <td><%= sheet.start_at %></td>
+        <td><%= sheet.total_score %></td>
+        <td><%= sheet.success %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @answer_sheets %>

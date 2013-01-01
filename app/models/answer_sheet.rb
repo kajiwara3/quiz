@@ -18,7 +18,8 @@ class AnswerSheet < ActiveRecord::Base
   def self.create_answer_sheet(examination, user)
     answer_sheet = self.new
     answer_sheet.assign_attributes(user_id: user.id,
-                                    examination_id: examination.id)
+                                    examination_id: examination.id,
+                                    start_at: Time.now)
     answer_sheet.save
     answer_sheet
   end
@@ -26,7 +27,8 @@ class AnswerSheet < ActiveRecord::Base
   def self.conplate_answer_sheet(answer_sheet, total_score)
     success = answer_sheet.examination.passing_grade <= total_score ? true : false
     answer_sheet.assign_attributes(total_score: total_score,
-                                    success: success)
+                                    success: success,
+                                    end_at: Time.now)
     answer_sheet.save
   end
 end
