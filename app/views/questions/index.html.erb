@@ -1,5 +1,5 @@
 <h3>
-  <i class="icon-pencil"></i> Questions
+  <i class="icon-pencil"></i> <%= @examination.name %> Questions
 </h3>
 <table class="table table-hover table-striped">
   <tbody>
@@ -17,4 +17,9 @@
   </tbody>
 </table>
 <%= paginate @questions %>
+<%= simple_form_for [:complete_examination, @examination], html: {class: 'form-holizonal', method: :put} do |f| %>
+  <%= button_tag class: 'btn btn-primary btn-large' do %>
+    <i class="icon-pencil icon-white"></i> 終了する
+  <% end %>
+<% end %>
 

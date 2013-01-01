@@ -1,1 +1,7 @@
-hello
+<h2>Account Information</h2>
+<ul>
+  <li><%= current_user.name %></li>
+  <li><%= current_user.email %></li>
+  <li><%= l(current_user.confirmed_at, format: :default) if  current_user.confirmed_at != nil %></li>
+  <li><%= l(current_user.confirmation_sent_at, format: :default) if current_user.confirmation_sent_at != nil %></li>
+</ul>

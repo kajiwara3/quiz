@@ -1,7 +1,7 @@
 <h3><i class="icon-pencil"></i> <%= @question.caption %></h3>
 <h4><%= @question.description %></h4>
 <hr />
-<%= form_tag [:admin, :examinations], method: :get do %>
+<%= form_tag answer_question_path, method: :post do %>
   <ol>
     <% @question.question_choices.each do |choice| %>
       <li>

@@ -6,8 +6,19 @@ Quiz::Application.routes.draw do
   root to: "top#index"
   match "wellcome", to: "users#wellcome"
   resource :users
+  resource :account_services
   resources :examinations do
+    member do
+      post 'start_examination'
+      put 'complete_examination'
+    end
     resources :questions
+  end
+
+  resources :questions do
+    member do
+      post 'answer'
+    end
   end
 
   namespace :admin do

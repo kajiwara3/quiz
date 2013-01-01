@@ -24,6 +24,10 @@
     <td><%= l @examination.end_at, format: :default %></td>
   </tr>
 </table>
-<%= link_to [@examination, :questions], class: "btn btn-primary btn-large" do %>
-  <i class="icon-pencil icon-white"></i> 受講する
+
+<%= simple_form_for [:start_examination, @examination], html: {class: 'form-holizonal', method: :post} do |f| %>
+  <%= f.hidden_field :id %>
+  <%= button_tag class: 'btn btn-primary btn-large' do %>
+    <i class="icon-pencil icon-white"></i> 受講する
+  <% end %>
 <% end %>
