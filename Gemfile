@@ -46,12 +46,14 @@ group :test, :development do
   # To use ActiveModel has_secure_password
   gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
   gem 'twitter-bootstrap-rails'
+
   #gem 'bootstrap-sass-rails'
   gem 'i18n_generators'
   gem 'simple_form'
   gem 'kaminari'
   gem "jquery_datepicker"
   gem "jquery-ui-themes"
+
   # Test
   gem 'factory_girl_rails', '~> 1.4.0'
   gem 'rails3-generators'
@@ -64,6 +66,10 @@ group :test, :development do
 
   # Amazon AWS
   gem 'aws-ses'
+
+  # Profiling
+  gem 'ruby-prof'
+  gem 'rack-contrib'
 end
 
 ################################################

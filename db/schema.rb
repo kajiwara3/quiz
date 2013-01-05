@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121225130959) do
+ActiveRecord::Schema.define(:version => 20130105075535) do
 
   create_table "administrators", :force => true do |t|
     t.string   "name"
@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(:version => 20121225130959) do
     t.integer  "examination_id",                    :null => false
     t.integer  "total_score"
     t.boolean  "success",        :default => false, :null => false
-    t.datetime "start_at"
     t.datetime "end_at"
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
@@ -108,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20121225130959) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.integer  "answer_sheets_count",    :default => 0,  :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

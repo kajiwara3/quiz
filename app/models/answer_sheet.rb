@@ -1,5 +1,5 @@
 class AnswerSheet < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, counter_cache: true
   belongs_to :examination
   has_many :answers
 
@@ -18,8 +18,7 @@ class AnswerSheet < ActiveRecord::Base
   def self.create_answer_sheet(examination, user)
     answer_sheet = self.new
     answer_sheet.assign_attributes(user_id: user.id,
-                                    examination_id: examination.id,
-                                    start_at: Time.now)
+                                    examination_id: examination.id)
     answer_sheet.save
     answer_sheet
   end

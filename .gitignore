@@ -43,3 +43,4 @@ config/environments/development.rb
 *.erm
 .DS_Store
 config/initializers/amazon_ses.rb
+/public/*s.html
