@@ -44,3 +44,5 @@ config/environments/development.rb
 .DS_Store
 config/initializers/amazon_ses.rb
 /public/*s.html
+/vendor/bundle
+/.rsync_cache

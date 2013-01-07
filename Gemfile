@@ -15,6 +15,10 @@ group :test, :development do
   # Bundle edge Rails instead:
   # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+  # nginx + unicorn
+  gem 'unicorn'
+  gem 'therubyracer'
+
   # sqlite
   # gem 'sqlite3'
   # mysql
