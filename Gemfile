@@ -14,11 +14,6 @@ end
 group :test, :development do
   # Bundle edge Rails instead:
   # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-  # nginx + unicorn
-  gem 'unicorn'
-  gem 'therubyracer'
-
   # sqlite
   # gem 'sqlite3'
   # mysql
@@ -116,7 +111,55 @@ end
 # 本番環境用
 ################################################
 group :production do
+  # nginx + unicorn
+  gem 'unicorn'
+  gem 'therubyracer'
+
+  # sqlite
+  # gem 'sqlite3'
+  # mysql
   gem 'mysql2'
+  # 国際化
+  gem 'rails-i18n'
+  # パンくずリスト対応
+  gem 'crummy'
+  # ユーザー認証
+  gem "devise"
+  # Deploy with Capistrano
+  gem 'rvm-capistrano'
+
+  # Gems used only for assets and not required
+  # in production environments by default.
+  group :assets do
+    #gem 'sass-rails',   '~> 3.2.3'
+    gem 'coffee-rails'
+
+    # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+    # gem 'therubyracer'
+
+    gem 'uglifier', '>= 1.0.3'
+#    gem 'less'
+    gem 'less-rails'
+  end
+
+  gem 'jquery-rails'
+  # To use ActiveModel has_secure_password
+  gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
+  gem 'twitter-bootstrap-rails'
+
+  #gem 'bootstrap-sass-rails'
+  gem 'i18n_generators'
+  gem 'simple_form'
+  gem 'kaminari'
+  gem "jquery_datepicker"
+  gem "jquery-ui-themes"
+
+  # Amazon AWS
+  gem 'aws-ses'
+
+  # Profiling
+  gem 'ruby-prof'
+  gem 'rack-contrib'
 end
 
 # To use ActiveModel has_secure_password
