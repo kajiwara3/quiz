@@ -86,8 +86,6 @@ group :staging do
   gem 'crummy'
   # ユーザー認証
   gem "devise"
-  # KVMコントロール
-  gem 'ruby-libvirt'
   # Gems used only for assets and not required
   # in production environments by default.
   group :assets do
