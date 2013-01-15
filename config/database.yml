@@ -29,7 +29,12 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: quiz
   pool: 5
+  username: quiz
+  password: test
+  host: localhost
   timeout: 5000
