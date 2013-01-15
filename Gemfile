@@ -118,8 +118,8 @@ group :production do
   # sqlite
   # gem 'sqlite3'
   # mysql
-  # gem 'mysql2'
-  gem 'mysql2','0.2.7'
+  gem 'mysql2'
+  # gem 'mysql2','0.2.7'
 
   # 国際化
   gem 'rails-i18n'
