@@ -80,7 +80,7 @@ namespace :deploy do
   desc "Copy shared config files to current application."
   task :config_symlink do
     run "rm #{release_path}/config/database.yml"
-    run "ln -s /home/seiji/config/database.yml #{release_path}/quiz_config/database.yml"
+    run "ln -s /home/seiji/quiz_config/database.yml #{release_path}/config/database.yml"
   end
 end
 
