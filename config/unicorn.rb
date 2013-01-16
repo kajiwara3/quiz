@@ -2,7 +2,7 @@
 worker_processes 2
 
 # ソケット経由で通信する
-listen File.expand_path('tmp/sockets/unicorn.sock', ENV['RAILS_ROOT'])
+listen File.expand_path('tmp/unicorn_prototypebeta.sock', ENV['RAILS_ROOT'])
 
 # ログ
 stderr_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
