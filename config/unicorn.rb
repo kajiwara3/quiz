@@ -1,8 +1,13 @@
 # ワーカーの数
 worker_processes 2
+working_directory "${RAILS_APP_ROOT}"
+
 
 # ソケット経由で通信する
-listen File.expand_path('tmp/unicorn_prototypebeta.sock', ENV['RAILS_ROOT'])
+listen File.expand_path('tmp/pids/unicorn.sock', ENV['RAILS_ROOT'])
+listen 4422, :tcp_nopush => true
+pid File.expand_path('tmp/pids/unicorn.pid', ENV['RAILS_ROOT'])
+timeout 10
 
 # ログ
 stderr_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
@@ -10,6 +15,7 @@ stdout_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
 
 # ダウンタイムなくす
 preload_app true
+GC.respond_to?(:copy_on_write_friendly=) and GC.copy_on_write_friendly = true
 
 before_fork do |server, worker|
   defined?(ActiveRecord::Base) and ActiveRecord::Base.connection.disconnect!
