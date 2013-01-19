@@ -14,7 +14,7 @@ stdout_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
 
 # ダウンタイムなくす
 # preload_app true
-preload_app faise
+preload_app false
 
 GC.respond_to?(:copy_on_write_friendly=) and GC.copy_on_write_friendly = true
 

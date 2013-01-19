@@ -78,7 +78,7 @@ namespace :deploy do
 
   task :restart do
     run "kill -USR2 `cat #{current_path}/tmp/pids/unicorn.pid`"
-    run "kill -QUIT `cat #{current_path}/tmp/pids/unicorn.pid.oldbin`"
+    # run "kill -QUIT `cat #{current_path}/tmp/pids/unicorn.pid.oldbin`"
     # run "touch #{current_path}/tmp/restart.txt"
   end
 
