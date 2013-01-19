@@ -13,7 +13,9 @@ stderr_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
 stdout_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
 
 # ダウンタイムなくす
-preload_app true
+# preload_app true
+preload_app faise
+
 GC.respond_to?(:copy_on_write_friendly=) and GC.copy_on_write_friendly = true
 
 before_fork do |server, worker|
