@@ -1,7 +1,6 @@
 # ワーカーの数
 worker_processes 2
-working_directory "${RAILS_APP_ROOT}"
-
+working_directory "#{ENV['RAILS_ROOT']}"
 
 # ソケット経由で通信する
 listen File.expand_path('tmp/pids/unicorn.sock', ENV['RAILS_ROOT'])
