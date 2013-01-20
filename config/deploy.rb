@@ -69,7 +69,7 @@ set :rails_env, :production
 namespace :deploy do
   # desc "cause Passenger to initiate a restart"
   task :start do
-    run "bundle exec unicorn_rails -c #{current_path}/config/unicorn.rb -E production -D"
+    run "cd #{current_path}; bundle exec unicorn_rails -c config/unicorn.rb -E #{rails_env} -D"
   end
 
   task :stop do
@@ -78,8 +78,6 @@ namespace :deploy do
 
   task :restart do
     run "kill -USR2 `cat #{current_path}/tmp/pids/unicorn.pid`"
-    # run "kill -QUIT `cat #{current_path}/tmp/pids/unicorn.pid.oldbin`"
-    # run "touch #{current_path}/tmp/restart.txt"
   end
 
   desc "reload the database with seed data"
