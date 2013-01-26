@@ -1,1 +1,8 @@
+<%= search_form_for @search, remote: true do |f| %>
+  <div class="field">
+    <%= f.label :name, "name"%>
+    <%= f.text_field :name_cont %>
+  </div>
+  <div class="actions"><%= f.submit 'Search' %></div>
+<% end %>
 <%= render 'examinations' %>

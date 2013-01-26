@@ -6,8 +6,14 @@ class ExaminationsController < ApplicationController
     # sample prifiling
     #require 'ruby-prof'
     #run_profiler do
-    @examinations = Examination.in_service.order(:id).
-                      page(params[:page]).per(5)
+    @search = Examination.search(params[:q])
+    if params[:q].nil?
+      @examinations = Examination.in_service.order(:id).
+                        page(params[:page]).per(5)
+    else
+      @examinations = @search.result.order(:id).
+                        page(params[:page]).per(5)
+    end
     respond_to do |format|
       format.html
       format.js

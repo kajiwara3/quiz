@@ -26,6 +26,8 @@ group :test, :development do
   gem "devise"
   # Deploy with Capistrano
   gem 'rvm-capistrano'
+  # 検索フォーム
+  gem 'ransack'
 
   # Gems used only for assets and not required
   # in production environments by default.
