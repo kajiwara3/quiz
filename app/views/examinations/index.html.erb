@@ -1,7 +1,15 @@
-<%= search_form_for @search, remote: true do |f| %>
+<%= search_form_for(@search, builder:SimpleForm::FormBuilder,
+                    html: {class: 'form-search'}, remote: true) do |f| %>
   <div class="field">
-    <%= f.label :name, "name"%>
+    <%= f.label :name, "Name" %>
     <%= f.text_field :name_cont %>
+  </div>
+  <br />
+  <div class="field">
+    <%= f.label :start_at_gteq, 'Date between' %>
+    <%= f.text_field :start_at_gteq %>
+    <%= f.label :end_at_gteq, 'and' %>
+    <%= f.text_field :end_at_gteq %>
   </div>
   <div class="actions"><%= f.submit 'Search' %></div>
 <% end %>
