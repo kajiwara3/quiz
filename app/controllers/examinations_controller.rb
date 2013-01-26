@@ -8,6 +8,10 @@ class ExaminationsController < ApplicationController
     #run_profiler do
     @examinations = Examination.in_service.order(:id).
                       page(params[:page]).per(5)
+    respond_to do |format|
+      format.html
+      format.js
+    end
     #end
   end
 
