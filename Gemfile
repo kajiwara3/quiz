@@ -28,6 +28,8 @@ group :test, :development do
   gem 'rvm-capistrano'
   # 検索フォーム
   gem 'ransack'
+  # くるくる画像
+  gem 'spinjs-rails'
 
   # Gems used only for assets and not required
   # in production environments by default.
