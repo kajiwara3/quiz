@@ -16,3 +16,9 @@
 //= require twitter/bootstrap
 //= require jquery.spin
 //= require_tree .
+
+// spinning wheel
+$(function(){
+  $("#examinations")
+    .live("ajax:beforeSend", function(){ $(".abc").spin(); })
+});
