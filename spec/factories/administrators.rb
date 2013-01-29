@@ -2,5 +2,9 @@
 
 FactoryGirl.define do
   factory :administrator do
+    name 'test_admin'
+    email 'test_admin@a.jp'
+    password 'password'
+    encrypted_password 'password'
   end
 end
