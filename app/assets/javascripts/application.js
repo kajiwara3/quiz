@@ -19,6 +19,6 @@
 
 // spinning wheel
 $(function(){
-  $("#examinations").live("ajax:beforeSend", function(){$(".abc").spin();});
+  $(".abc").live("ajax:beforeSend", function(){$(".abc").spin();});
   $(".search_button").click(function(){$('.abc').spin();});
 });
