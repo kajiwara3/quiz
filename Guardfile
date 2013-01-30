@@ -2,7 +2,7 @@
 # More info at https://github.com/guard/guard#readme
 
 # guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' }, :wait => 60 do
-guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' }, wait: 30 do
+guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' }, wait: 60 do
   watch('config/application.rb')
   watch('config/environment.rb')
   # watch('config/environments/test.rb')
