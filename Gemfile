@@ -67,6 +67,7 @@ group :test, :development do
   gem 'guard-spork'
   gem 'rb-fsevent', :require => false
   gem 'database_cleaner'
+  gem 'rr'
 
   # Amazon AWS
   gem 'aws-ses'

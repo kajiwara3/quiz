@@ -2,12 +2,14 @@
 require 'spec_helper'
 
 describe ExaminationsController do
+  let(:let_test) {'this is let_test'}
   shared_examples_for 'Shared Example Group' do
     before do
       p '============ shared_examples_for: test'
     end
     it 'test' do
       p '============ test sample'
+      p let_test
     end
   end
 

@@ -13,7 +13,7 @@ describe "examinations/index.html.erb" do
   end
 
   it "期間中のテスト名が表示される" do
-    rendered.should =~ /examination_service/
+    rendered.should =~ /examination_in_service/
   end
 
   it '期間前のテスト名は表示されない' do

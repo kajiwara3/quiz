@@ -9,7 +9,7 @@ FactoryGirl.define do
     e.end_at 2.days.from_now
   end
   factory :examination_in_service, class: Examination do |e|
-    e.name 'examination_service'
+    e.name 'examination_in_service'
     e.entry_capasity '10'
     e.passing_grade '80'
     e.start_at 1.days.ago
