@@ -68,6 +68,7 @@ group :test, :development do
   gem 'rb-fsevent', :require => false
   gem 'database_cleaner'
   gem 'rr'
+  gem 'webmock', require: 'webmock/rspec'
 
   # Amazon AWS
   gem 'aws-ses'
