@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'spork'
+
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
@@ -15,7 +16,7 @@ Spork.prefork do
   require 'rspec/autorun'
   require 'database_cleaner'
   require 'capybara/rails'
-
+  require 'capybara/rspec'
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
@@ -50,6 +51,7 @@ Spork.prefork do
 
     config.include Devise::TestHelpers, type: :controller
     config.extend ControllerMacros, type: :controller
+    config.include HelperMethods, type: :feature
 
     config.before(:suite) do
       DatabaseCleaner.strategy = :transaction

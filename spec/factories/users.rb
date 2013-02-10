@@ -6,7 +6,7 @@ FactoryGirl.define do
     u.email 'user1@a.jp'
     u.gender {|user| user.association(:gender_man)}
     password 'password'
-    encrypted_password 'password'
+    password_confirmation 'password'
     privacy_agree 'true'
   end
 
@@ -15,7 +15,7 @@ FactoryGirl.define do
     u.email 'user2@a.jp'
     u.gender {|user| user.association(:gender_man)}
     password 'password'
-    encrypted_password 'password'
+    password_confirmation 'password'
     privacy_agree 'true'
   end
 end

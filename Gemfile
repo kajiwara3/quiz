@@ -47,7 +47,7 @@ group :test, :development do
 
   gem 'jquery-rails'
   # To use ActiveModel has_secure_password
-  gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
+  #gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
   gem 'twitter-bootstrap-rails'
 
   #gem 'bootstrap-sass-rails'
