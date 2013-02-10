@@ -69,6 +69,8 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'rr'
   gem 'webmock', require: 'webmock/rspec'
+  gem 'capybara'
+  gem 'launchy'
 
   # Amazon AWS
   gem 'aws-ses'
