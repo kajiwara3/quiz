@@ -16,5 +16,20 @@ module HelperMethods
     fill_in 'user_password', with: @user.password
     click_button 'Sign in'
   end
+
+  def logout_administrator(admin = @current_admin_administrator)
+    Capybara.reset_sessions!
+    visit destroy_admin_administrator_session_url
+  end
+
+  def login_admin
+    logout_administrator if @current_admin_administrator
+    @admin = Factory.create :administrator
+
+    visit new_admin_administrator_session_url
+    fill_in 'admin_administrator_email', with: @admin.email
+    fill_in 'admin_administrator_password', with: @admin.password
+    click_button 'Sign in'
+  end
 end
 

@@ -4,7 +4,7 @@ describe 'Deviseでのセッション機能' do
   before do
   end
 
-  it 'ログインページが表示できること' do
+  it 'ユーザー用トップページが表示できること' do
     visit '/'
     page.should have_content "sign_in"
   end
